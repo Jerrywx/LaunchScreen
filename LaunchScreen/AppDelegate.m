@@ -1,13 +1,17 @@
 //
 //  AppDelegate.m
-//  LaunchScreen
+//  LaunchDemo
 //
-//  Created by wxiao on 15/12/20.
+//  Created by wxiao on 15/12/19.
 //  Copyright © 2015年 wxiao. All rights reserved.
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
+#import "LaunchDemo.h"
 
+#define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
+#define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
 @interface AppDelegate ()
 
 @end
@@ -16,8 +20,32 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-	// Override point for customization after application launch.
+	
+	[self setUpWindow];
+	
+	LaunchDemo *demo = [LaunchDemo new];
+	demo.iconFrame = CGRectMake((SCREEN_WIDTH - 213) * 0.5, 80, 213, 54);
+	demo.desLabelFreme = CGRectMake(0, SCREEN_HEIGHT - 34, SCREEN_WIDTH, 25);
+	[demo loadLaunchImage:@"STARTIMAGE.jpg"
+				 iconName:@"logo_coding_top"
+			  appearStyle:JRApperaStyleOne
+				  bgImage:@"bg.png"
+				disappear:JRDisApperaStyleLeft
+		   descriptionStr:@"23601145@qq.com"];
+	demo.desLabel.font = [UIFont systemFontOfSize:12];
+	demo.desLabel.textColor = [UIColor whiteColor];
+	
+	
 	return YES;
+}
+
+- (void)setUpWindow {
+	
+	self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+	ViewController *view = [[ViewController alloc] init];
+	UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:view];
+	self.window.rootViewController = nav;
+	[self.window makeKeyAndVisible];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
