@@ -8,9 +8,6 @@
 
 #import "LaunchDemo.h"
 
-#define SCREEN_BOUNDS ([UIScreen mainScreen].bounds)
-#define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
-#define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
 @interface LaunchDemo ()
 @property (nonatomic, strong) UIImageView	*bgImage;
 @property (nonatomic, strong) UIImageView	*iconImage;
@@ -41,9 +38,7 @@
 	
 	[window addSubview:_launchimage];
 	[window addSubview:_dumy];
-	
-	NSLog(@"--- %@", _launchimage);
-	NSLog(@"=== %@", window);
+
 	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(13 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 		[self imageDismiss];
 	});
@@ -80,8 +75,6 @@
 	[window addSubview:_bgImage];
 	[window addSubview:_iconImage];
 	
-	NSLog(@"--- %@", _launchimage);
-	NSLog(@"=== %@", window);
 	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 		[self dismissAll:JRDisApperaStyleLeft];
 	});
@@ -149,7 +142,6 @@
 		[window addSubview:_bgImage];
 		[window addSubview:_launchimage];
 		[window addSubview:_iconImage];
-		_launchimage.alpha = 0.0;
 		
 		[UIView animateWithDuration:1.0 animations:^{
 			_launchimage.alpha = 1.0;

@@ -41,6 +41,7 @@
 		34E470131C26567C00130E9A /* LaunchDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchDemo.h; sourceTree = "<group>"; };
 		34E470141C26567C00130E9A /* LaunchDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchDemo.m; sourceTree = "<group>"; };
 		34E470161C26598C00130E9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C496E73A1C8C520B00C199B9 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +80,6 @@
 				34E46FF21C26561D00130E9A /* AppDelegate.m */,
 				34E46FF41C26561D00130E9A /* ViewController.h */,
 				34E46FF51C26561D00130E9A /* ViewController.m */,
-				34E470161C26598C00130E9A /* Images.xcassets */,
 				34E46FEE1C26561D00130E9A /* Supporting Files */,
 			);
 			path = LaunchScreen;
@@ -88,6 +88,8 @@
 		34E46FEE1C26561D00130E9A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C496E73A1C8C520B00C199B9 /* PrefixHeader.pch */,
+				34E470161C26598C00130E9A /* Images.xcassets */,
 				34E46FF71C26561D00130E9A /* Main.storyboard */,
 				34E46FFC1C26561D00130E9A /* LaunchScreen.storyboard */,
 				34E46FFF1C26561D00130E9A /* Info.plist */,
@@ -310,6 +312,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				GCC_PREFIX_HEADER = LaunchScreen/PrefixHeader.pch;
 				INFOPLIST_FILE = LaunchScreen/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = clib.sariel.lijin.LaunchScreen;
@@ -322,6 +325,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				GCC_PREFIX_HEADER = LaunchScreen/PrefixHeader.pch;
 				INFOPLIST_FILE = LaunchScreen/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = clib.sariel.lijin.LaunchScreen;
@@ -348,6 +352,7 @@
 				34E470041C26561D00130E9A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
